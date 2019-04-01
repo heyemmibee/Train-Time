@@ -17,7 +17,7 @@ var config = {
       
       var trainName = $("#train-input").val().trim();
       var trainDestiny = $("#destination-input").val().trim();
-      var trainTime = moment($("#time-input").val().trim(), ("HH:mm").format("12:34");
+      var trainTime = $("#time-input").val().trim();
       var trainFrequency = $("#frequency-input").val().trim();
 
       var newTrain = {
@@ -56,7 +56,13 @@ var config = {
     console.log(trainTime);
     console.log(trainFrequency);
 
-      //calculations go here for minutes away
+    var trainName = $("#train-input").val().trim();
+    var trainDestiny = $("#destination-input").val().trim();
+    var trainTime = $("#time-input").val().trim();
+    var trainFrequency = $("#frequency-input").val().trim();
+    var prettyChoo = moment();
+    var trainDifference = moment().diff(moment(trainTime), "minutes");
+    var trainRemaining = trainDifference % trainFrequency;
       //var prettyChoo = moment.unix(trainTime).format("HH:mm");
 
     var newRow = $("<tr>").append(

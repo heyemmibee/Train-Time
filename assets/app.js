@@ -1,5 +1,4 @@
 // 1. Initialize Firebase
-
 var config = {
     apiKey: "AIzaSyBCo7SVY1Q4GG99L6B2nHmqc9D04i08Sz0",
     authDomain: "train-project-82d8c.firebaseapp.com",
@@ -44,7 +43,6 @@ var config = {
   });
 
   database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
 
     var trainName = childSnapshot.val().name;
     var trainDestiny = childSnapshot.val().destination;
